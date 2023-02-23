@@ -1,1 +1,14 @@
 <h1><%= @list.name %></h1>
+
+<% @list.movies.each do |movie| %>
+  <%= movie.title %>
+<% end %>
+
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie, as: :radio_buttons %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Go back to lists", lists_path %>
