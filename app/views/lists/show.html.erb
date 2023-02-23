@@ -1,9 +1,13 @@
+<div class=container>
 <h1><%= @list.name %></h1>
 
-<% @list.movies.each do |movie| %>
-  <%= movie.title %>
-<% end %>
+<ul>
+<% @list.bookmarks.each do |bookmark| %>
+  <li><%= bookmark.movie.title %></li> <%= bookmark.comment %>
+  <%= link_to "Delete bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
 
+<% end %>
+</ul>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
@@ -12,3 +16,4 @@
 <% end %>
 
 <%= link_to "Go back to lists", lists_path %>
+</div>
