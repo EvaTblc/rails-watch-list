@@ -33,6 +33,6 @@ policier.photo.attach(io: filepo, filename: "aventure.png", content_type: "avent
 policier.save
 
 puts "Create bookmark"
-Bookmark.create(comment: "ceci est un test", movie: wonder, list: action)
+Bookmark.create(comment: "Un vrai film de nanas", movie: wonder, list: action)
 
 puts "Finished !"
