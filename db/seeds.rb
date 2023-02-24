@@ -14,7 +14,7 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 puts "Create some lists..."
 file = URI.open("https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/646987-jasin-boland-c-2012-warner-bros-entertainment-inc-54e2f8c553776eafbfd8ede11121a700.jpg")
 action = List.create(name: "Action")
-action.photo.attach(io: file, filename: "action.jpg", content_type: "action/jpg")
+action.photo.attach(io: file, filename: "action.png", content_type: "action/png")
 action.save
 
 List.create(name: "Aventure")
