@@ -1,7 +1,9 @@
+require 'open-uri'
+
 puts "Cleaning database..."
 Bookmark.destroy_all
-Movie.destroy_all
 List.destroy_all
+Movie.destroy_all
 
 puts "Create some movies..."
 wonder = Movie.create(title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
@@ -10,9 +12,15 @@ Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells
 Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
 puts "Create some lists..."
+file = URI.open("https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/646987-jasin-boland-c-2012-warner-bros-entertainment-inc-54e2f8c553776eafbfd8ede11121a700.jpg")
 action = List.create(name: "Action")
+action.photo.attach(io: file, filename: "action.jpg", content_type: "action/jpg")
+action.save
+
 List.create(name: "Aventure")
+
 List.create(name: "Romance")
+
 List.create(name: "Policier")
 
 puts "Create bookmark"
