@@ -17,11 +17,20 @@ action = List.create(name: "Action")
 action.photo.attach(io: file, filename: "action.png", content_type: "action/png")
 action.save
 
-List.create(name: "Aventure")
+fileav = URI.open("https://media.ngroup.be/IMAGE/IMAGE-S1-00013/48998-indiana-jones.jpg")
+aventure = List.create(name: "Aventure")
+aventure.photo.attach(io: fileav, filename: "aventure.png", content_type: "aventure/png")
+aventure.save
 
-List.create(name: "Romance")
+filero = URI.open("https://hips.hearstapps.com/hmg-prod/images/hbz-most-romantic-movies-pride-and-prejudice-1549569450.jpg")
+romance = List.create(name: "Romance")
+romance.photo.attach(io: filero, filename: "aventure.png", content_type: "aventure/png")
+romance.save
 
-List.create(name: "Policier")
+filepo = URI.open("https://media.gqindia.com/wp-content/uploads/2020/02/7-Bollywood-cop-movies-on-Amazon-Prime-Video-Netflix-and-Hotstar-to-binge-this-week.jpg")
+policier = List.create(name: "Policier")
+policier.photo.attach(io: filepo, filename: "aventure.png", content_type: "aventure/png")
+policier.save
 
 puts "Create bookmark"
 Bookmark.create(comment: "ceci est un test", movie: wonder, list: action)
