@@ -4,11 +4,15 @@
 <h1>All the lists</h1>
 </div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<% @lists.each do |list| %>
+<div class="card-product">
+  <img src="" />
+  <div class="card-product-infos">
+    <h2><%= link_to list.name, list_path(list) %></h2>
+  </div>
+</div>
+<% end %>
+
 
 <%= link_to "Add list", new_list_path, class:"btn-ghost" %>
 </div>
